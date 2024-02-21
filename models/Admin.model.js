@@ -7,9 +7,40 @@ let adminSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
+    profileImage: {
+      type: String,
+    },
+    authorName: {
+      type: String,
+      // required: true,
+      // unique: true,
+    },
+    mobile: {
+      type: String,
+    },
+    whatsup: {
+      type: String,
+    },
+    location: {
+      type: String,
+    },
+    mail: {
+      type: String,
+    },
+    companyAddress: {
+      type: String,
+    },
+    companyEmail: {
+      type: String,
+    },
+    websiteLink: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
     companyName: {
       type: String,
-      required: true,
     },
   },
   { timestamps: true }

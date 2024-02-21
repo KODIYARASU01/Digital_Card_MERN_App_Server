@@ -11,10 +11,47 @@ export const getAdmin = async (req, res) => {
 };
 
 export const postAdmin = async (req, res) => {
+  let {
+    profileImage,
+    companyName,
+    authorName,
+    mobile,
+    whatsup,
+    location,
+    mail,
+    companyAddress,
+    companyEmail,
+    websiteLink,
+    phoneNumber,
+  } = req.body;
   try {
+    let data = {
+      profileImage,
+      companyName,
+      authorName,
+      mobile,
+      whatsup,
+      location,
+      mail,
+      companyAddress,
+      companyEmail,
+      websiteLink,
+      phoneNumber,
+    };
+
     let postAdmin = await Admin.create({
       user: req.user.id,
+      profileImage: req.body.profileImage,
       companyName: req.body.companyName,
+      authorName: req.body.authorName,
+      mobile: req.body.mobile,
+      whatsup: req.body.whatsup,
+      location: req.body.location,
+      mail: req.body.mail,
+      companyAddress: req.body.companyAddress,
+      companyEmail: req.body.companyEmail,
+      websiteLink: req.body.websiteLink,
+      phoneNumber: req.body.phoneNumber,
     });
     return res.status(201).send("Admin Created Successfully" + postAdmin);
   } catch (err) {
