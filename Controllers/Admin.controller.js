@@ -12,6 +12,7 @@ export const getAdmin = async (req, res) => {
 
 export const postAdmin = async (req, res) => {
   let {
+    count,
     profileImage,
     companyName,
     authorName,
@@ -26,6 +27,7 @@ export const postAdmin = async (req, res) => {
   } = req.body;
   try {
     let data = {
+      count,
       profileImage,
       companyName,
       authorName,
@@ -40,6 +42,7 @@ export const postAdmin = async (req, res) => {
     };
 
     let postAdmin = await Admin.create({
+      count: req.body.count,
       user: req.user.id,
       profileImage: req.body.profileImage,
       companyName: req.body.companyName,

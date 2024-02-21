@@ -7,6 +7,9 @@ let adminSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
+    count: {
+      type: Number,
+    },
     profileImage: {
       type: String,
     },

@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 import {
   userRegisterRoute,
   userLoginRoute,
+  loginUserDataRoute,
   adminDashboard,
 } from "./Routes/User.router.js";
 
@@ -25,6 +26,7 @@ let uri = process.env.MONGODB_URI;
 app.use(cors());
 app.use("/api", userRegisterRoute);
 app.use("/api", userLoginRoute);
+app.use("api", loginUserDataRoute);
 app.use("/api", adminDashboard);
 app.use("/api", adminGetRoute);
 app.use("/api", adminPostRoute);
