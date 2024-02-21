@@ -11,5 +11,5 @@ let router = express.Router();
 
 export let userRegisterRoute = router.post("/register", postRegister);
 export let userLoginRoute = router.post("/login", loginUser);
-export let loginUserDataRoute = router.get("/login", getLoginUserData);
+export let loginUserDataRoute = router.get("/login/:_id", getLoginUserData);
 export let adminDashboard = router.get("/admin", adminUser);

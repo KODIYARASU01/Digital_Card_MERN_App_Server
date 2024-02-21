@@ -52,6 +52,7 @@ export const getLoginUserData = async (req, res) => {
     if (user && (await bcrypt.compare(password, user.password, profile))) {
       return res.status(201).json({
         _id: user._id,
+        user: user,
         userName: user.userName,
         password: user.password,
         profile: user.profile,
