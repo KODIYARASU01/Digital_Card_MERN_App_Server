@@ -7,7 +7,7 @@ let aboutSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
-    companyName: {
+    brandName: {
       type: String,
     },
     category: {

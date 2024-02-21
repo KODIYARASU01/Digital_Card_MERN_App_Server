@@ -11,10 +11,10 @@ export const getAbout = async (req, res) => {
 };
 
 export const postAbout = async (req, res) => {
-  let { companyName, category, yearOfEst, value } = req.body;
+  let { brandName, category, yearOfEst, value, bussiness } = req.body;
   try {
     let data = {
-      companyName,
+      brandName,
       category,
       yearOfEst,
       bussiness,
@@ -22,9 +22,8 @@ export const postAbout = async (req, res) => {
     };
 
     let postAbout = await About.create({
+      brandName: req.body.brandName,
       user: req.user.id,
-      companyName: req.body.companyName,
-
       category: req.body.category,
       yearOfEst: req.body.yearOfEst,
       bussiness: req.body.bussiness,
@@ -38,12 +37,12 @@ export const postAbout = async (req, res) => {
 
 export const putAbout = async (req, res) => {
   try {
-    let user = await User.findById(req.user.id);
+    let about = await About.findById(req.user.id);
 
-    if (!user) {
+    if (!about) {
       return res.status(401).json({ msg: "User not found" });
     }
-    if (About.user.toString !== user.id) {
+    if (About.user.toString !== about.id) {
       return res.status(401).json({ msg: "User not Autherized" });
     }
 
