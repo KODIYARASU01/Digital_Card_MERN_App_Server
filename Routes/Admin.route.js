@@ -19,6 +19,12 @@ import {
   postService,
   putService,
 } from "../Controllers/Service.controller.js";
+import {
+  deletePayment,
+  getPayment,
+  postPayment,
+  putPayment,
+} from "../Controllers/Payment.controller.js";
 let router = express.Router();
 
 export let adminGetRoute = router.get("/user", auth, getAdmin);
@@ -50,4 +56,18 @@ export let serviceDeleteRoute = router.delete(
   "/user/service/:id",
   auth,
   deleteService
+);
+
+//payment
+export let paymentGetRoute = router.get("/user/payment", auth, getPayment);
+export let paymentPostRoute = router.post("/user/payment", auth, postPayment);
+export let paymentUpdateRoute = router.put(
+  "/user/payment/:id",
+  auth,
+  putPayment
+);
+export let paymentDeleteRoute = router.delete(
+  "/user/payment/:id",
+  auth,
+  deletePayment
 );

@@ -24,6 +24,10 @@ import {
   servicePostRoute,
   serviceUpdateRoute,
   serviceDeleteRoute,
+  paymentGetRoute,
+  paymentPostRoute,
+  paymentUpdateRoute,
+  paymentDeleteRoute,
 } from "./Routes/Admin.route.js";
 let app = express();
 app.use(express.json());
@@ -50,6 +54,12 @@ app.use("/api", serviceGetRoute);
 app.use("/api", servicePostRoute);
 app.use("/api", serviceUpdateRoute);
 app.use("/api", serviceDeleteRoute);
+
+//Payment:
+app.use("/api", paymentGetRoute);
+app.use("/api", paymentPostRoute);
+app.use("/api", paymentUpdateRoute);
+app.use("/api", paymentDeleteRoute);
 app.get("/", (req, res) => {
   res.send("Hello,Server is running");
 });
