@@ -16,8 +16,15 @@ import {
   adminPostRoute,
   adminUpdateRoute,
   adminDeleteRoute,
+  aboutGetRoute,
+  aboutPostRoute,
+  aboutUpdateRoute,
+  aboutDeleteRoute,
+  serviceGetRoute,
+  servicePostRoute,
+  serviceUpdateRoute,
+  serviceDeleteRoute,
 } from "./Routes/Admin.route.js";
-
 let app = express();
 app.use(express.json());
 let PORT = process.env.PORT || 3000;
@@ -32,6 +39,17 @@ app.use("/api", adminGetRoute);
 app.use("/api", adminPostRoute);
 app.use("/api", adminUpdateRoute);
 app.use("/api", adminDeleteRoute);
+
+//About:
+app.use("/api", aboutGetRoute);
+app.use("/api", aboutPostRoute);
+app.use("/api", aboutUpdateRoute);
+app.use("/api", aboutDeleteRoute);
+//Services:
+app.use("/api", serviceGetRoute);
+app.use("/api", servicePostRoute);
+app.use("/api", serviceUpdateRoute);
+app.use("/api", serviceDeleteRoute);
 app.get("/", (req, res) => {
   res.send("Hello,Server is running");
 });

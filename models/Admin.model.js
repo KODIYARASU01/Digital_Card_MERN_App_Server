@@ -1,20 +1,4 @@
 import mongoose from "mongoose";
-
-let aboutSchema = mongoose.Schema({
-  category: {
-    type: String,
-  },
-  yearOfEst: {
-    type: Number,
-  },
-  bussiness: {
-    type: String,
-  },
-  value: {
-    type: String,
-  },
-});
-
 let adminSchema = mongoose.Schema(
   {
     user: {
@@ -60,7 +44,6 @@ let adminSchema = mongoose.Schema(
     companyName: {
       type: String,
     },
-    about: aboutSchema,
   },
   { timestamps: true }
 );
