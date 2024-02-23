@@ -25,6 +25,13 @@ import {
   postPayment,
   putPayment,
 } from "../Controllers/Payment.controller.js";
+
+import {
+  putGallery,
+  getGallery,
+  postGallery,
+  deleteGallery,
+} from "../Controllers/Gallery.controller.js";
 let router = express.Router();
 
 export let adminGetRoute = router.get("/user", auth, getAdmin);
@@ -70,4 +77,15 @@ export let paymentDeleteRoute = router.delete(
   "/user/payment/:id",
   auth,
   deletePayment
+);
+
+//Gallery:
+
+export let galleryGetRoute = router.get("/user/gallery", auth, getGallery);
+export let galleryPostRoute = router.post("/user/gallery", auth, postGallery);
+export let galleryPutRoute = router.put("/user/gallery", auth, putGallery);
+export let galleryDeleteRoute = router.delete(
+  "/user/gallery",
+  auth,
+  deleteGallery
 );
